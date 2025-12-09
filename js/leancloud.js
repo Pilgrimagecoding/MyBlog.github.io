@@ -176,7 +176,16 @@
     addCount(Counter);
   }
 
-  var apiServer = serverUrl || `https://${appId.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+  var apiServer = serverUrl;
+
+  if (!apiServer) {
+    var suffix = appId.split('-').pop().toLowerCase();
+    var regionMap = {
+      // 中国区常见集群
+      'gzgzohsz': 'https://api.lc-cn-n1-shared.com'
+    };
+    apiServer = regionMap[suffix] || null;
+  }
 
   if (apiServer) {
     fetchData(apiServer);
