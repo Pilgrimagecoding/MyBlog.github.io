@@ -34,13 +34,6 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://shaoyanzhe.site/img/the_start.jpg">
   
-  <!-- Preconnect to comment server and asset CDNs to speed up TLS handshake -->
-  <link rel="preconnect" href="https://waline-weld-ten.vercel.app">
-  <link rel="dns-prefetch" href="//waline-weld-ten.vercel.app">
-  <link rel="preconnect" href="https://registry.npmmirror.com">
-  <link rel="dns-prefetch" href="//registry.npmmirror.com">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
   
   
   <title>我的第一篇博客 - 今晚...又要失眠？</title>
@@ -81,7 +74,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"shaoyanzhe.site","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":0.6},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"b2583709b24c2311aac5082d4ee85e74","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"mxne2dIPjTIbjyL9nRRC6jby-gzGzoHsz","app_key":"erjiQLerre5CcjsnOnCBzipq","server_url":"https://api.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"shaoyanzhe.site","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"b2583709b24c2311aac5082d4ee85e74","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"mxne2dIPjTIbjyL9nRRC6jby-gzGzoHsz","app_key":"erjiQLerre5CcjsnOnCBzipq","server_url":"https://api.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -429,24 +422,49 @@
       
   <div id="waline"></div>
   <script type="text/javascript">
-    Fluid.utils.loadComments('#waline', function() {
-      Fluid.utils.createCssLink('https://registry.npmmirror.com/@waline/client/2.15.8/files/dist/waline.css')
-      Fluid.utils.createScript('https://registry.npmmirror.com/@waline/client/2.15.8/files/dist/waline.js', function() {
-        var options = Object.assign(
-          {"serverURL":"https://waline-weld-ten.vercel.app","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":5,"login":"enable"},
-          {
-            el: '#waline',
-            path: window.location.pathname
+    (function() {
+      Fluid.utils.loadComments('#waline', function() {
+        try {
+          var baseOptions = {"serverURL":"https://waline-weld-ten.vercel.app","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10,"login":"enable"};
+          if (baseOptions.serverURL) {
+            var pre = document.createElement('link');
+            pre.rel = 'preconnect';
+            pre.href = baseOptions.serverURL;
+            document.head.appendChild(pre);
           }
-        )
-        Waline.init(options);
-        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
-          var imgSelector = '#waline .vcontent img:not(.vemoji)';
-          Fluid.plugins.imageCaption(imgSelector);
-          Fluid.plugins.fancyBox(imgSelector);
-        })
+
+          Fluid.utils.createCssLink('https://registry.npmmirror.com/@waline/client/2.15.8/files/dist/waline.css');
+
+          var computePath = function() {
+            try {
+              return (function(){ return eval("window.location.pathname"); })();
+            } catch (e) {
+              return window.location.pathname;
+            }
+          };
+
+          var s = document.createElement('script');
+          s.src = 'https://registry.npmmirror.com/@waline/client/2.15.8/files/dist/waline.js';
+          s.defer = true;
+          s.onload = function() {
+            try {
+              var options = Object.assign(baseOptions, { el: '#waline', path: computePath() });
+              Waline.init(options);
+              Fluid.utils.waitElementVisible('#waline .vcontent', function() {
+                var imgSelector = '#waline .vcontent img:not(.vemoji)';
+                Fluid.plugins.imageCaption(imgSelector);
+                Fluid.plugins.fancyBox(imgSelector);
+              });
+            } catch (err) {
+              console.error('Waline init error: ', err);
+            }
+          };
+          document.head.appendChild(s);
+        } catch (err) {
+          console.error('Waline load error: ', err);
+        }
       });
-    });
+    })();
   </script>
   <noscript>Please enable JavaScript to view the comments</noscript>
 
