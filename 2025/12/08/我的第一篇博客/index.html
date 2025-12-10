@@ -425,7 +425,7 @@
     (function() {
       Fluid.utils.loadComments('#waline', function() {
         try {
-          var baseOptions = {"serverURL":"https://waline-weld-ten.vercel.app","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10,"login":"enable"};
+          var baseOptions = {"serverURL":"https://waline-weld-ten.vercel.app","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10,"login":"force"};
           if (baseOptions.serverURL) {
             var pre = document.createElement('link');
             pre.rel = 'preconnect';
@@ -450,6 +450,11 @@
             try {
               var options = Object.assign(baseOptions, { el: '#waline', path: computePath() });
               Waline.init(options);
+              // hide unused oauth icons in client widget
+              ['.oauth.twitter', '.oauth.facebook'].forEach(function(sel){
+                var el = document.querySelector('#waline ' + sel);
+                if (el) el.style.display = 'none';
+              });
               Fluid.utils.waitElementVisible('#waline .vcontent', function() {
                 var imgSelector = '#waline .vcontent img:not(.vemoji)';
                 Fluid.plugins.imageCaption(imgSelector);
