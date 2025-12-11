@@ -75,7 +75,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"shaoyanzhe.site","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"b2583709b24c2311aac5082d4ee85e74","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"mxne2dIPjTIbjyL9nRRC6jby-gzGzoHsz","app_key":"erjiQLerre5CcjsnOnCBzipq","server_url":"https://api.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"shaoyanzhe.site","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -85,32 +85,6 @@
   <script  src="../../../../js/utils.js" ></script>
   <script  src="../../../../js/color-schema.js" ></script>
   
-
-  
-    <!-- Baidu Analytics -->
-    <script async>
-      if (!Fluid.ctx.dnt) {
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?b2583709b24c2311aac5082d4ee85e74";
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(hm, s);
-        })();
-      }
-    </script>
-  
-
-  
-
-  
-
-  
-
-  
-    
-  
-
 
 
   
@@ -127,7 +101,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="../../../../index.html">
-      <strong>Blog</strong>
+      <strong>Fluid</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -269,15 +243,6 @@
     
 
     
-    
-      
-        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
-          <i class="iconfont icon-eye" aria-hidden="true"></i>
-          <span id="leancloud-page-views"></span> 次
-        </span>
-        
-      
-      
     
   </div>
 
@@ -478,96 +443,6 @@
             </div>
 
             
-  
-  
-    <article id="comments" lazyload>
-      
-  <div id="waline"></div>
-  <script type="text/javascript">
-    (function() {
-      Fluid.utils.loadComments('#waline', function() {
-        try {
-          var baseOptions = {"serverURL":"https://comment.shaoyanzhe.site","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10,"login":"force"};
-          if (baseOptions.serverURL) {
-            var pre = document.createElement('link');
-            pre.rel = 'preconnect';
-            pre.href = baseOptions.serverURL;
-            document.head.appendChild(pre);
-          }
-
-          var cssCdnList = [
-            'https://registry.npmmirror.com/@waline/client/2.15.8/files/dist/waline.css',
-            'https://npm.elemecdn.com/@waline/client@v3/dist/waline.css',
-            'https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.css',
-            'https://unpkg.com/@waline/client@v3/dist/waline.css'
-          ];
-          Fluid.utils.createCssLink(cssCdnList[0]);
-
-          var computePath = function() {
-            try {
-              return (function(){ return eval("window.location.pathname"); })();
-            } catch (e) {
-              return window.location.pathname;
-            }
-          };
-
-          var loadScriptWithFallback = function(urls, onload) {
-            var idx = 0;
-            var tryLoad = function() {
-              var s = document.createElement('script');
-              s.src = urls[idx];
-              s.defer = true;
-              s.onload = onload;
-              s.onerror = function() {
-                if (++idx < urls.length) {
-                  tryLoad();
-                } else {
-                  console.error('Waline script load failed');
-                }
-              };
-              document.head.appendChild(s);
-            };
-            tryLoad();
-          };
-
-          var jsCdnList = [
-            'https://registry.npmmirror.com/@waline/client/2.15.8/files/dist/waline.js',
-            'https://npm.elemecdn.com/@waline/client@v3/dist/waline.js',
-            'https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.js',
-            'https://unpkg.com/@waline/client@v3/dist/waline.js'
-          ];
-
-          loadScriptWithFallback(jsCdnList, function() {
-            try {
-              var options = Object.assign(baseOptions, { el: '#waline', path: computePath() });
-              Waline.init(options);
-              // hide unused oauth icons in client widget
-              ['.oauth.twitter', '.oauth.facebook'].forEach(function(sel){
-                var el = document.querySelector('#waline ' + sel);
-                if (el) el.style.display = 'none';
-              });
-              Fluid.utils.waitElementVisible('#waline .vcontent', function() {
-                var imgSelector = '#waline .vcontent img:not(.vemoji)';
-                Fluid.plugins.imageCaption(imgSelector);
-                Fluid.plugins.fancyBox(imgSelector);
-              });
-            } catch (err) {
-              console.error('Waline init error: ', err);
-            }
-          });
-        } catch (err) {
-          console.error('Waline load error: ', err);
-        }
-      });
-    })();
-  </script>
-  <noscript>Please enable JavaScript to view the comments</noscript>
-
-
-    </article>
-  
-
-
           </article>
         </div>
       </div>
@@ -663,32 +538,6 @@
        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
     </div>
   
-  
-    <div class="statistics">
-  
-  
-
-  
-    
-      <span id="leancloud-site-pv-container" style="display: none">
-        总访问量 
-        <span id="leancloud-site-pv"></span>
-         次
-      </span>
-    
-    
-      <span id="leancloud-site-uv-container" style="display: none">
-        总访客数 
-        <span id="leancloud-site-uv"></span>
-         人
-      </span>
-    
-    
-
-  
-
-</div>
-
   
   
 </div>
@@ -832,8 +681,6 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
-
-  <script defer src="../../../../js/leancloud.js" ></script>
 
   <script  src="../../../../js/local-search.js" ></script>
 
