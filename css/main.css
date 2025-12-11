@@ -1213,6 +1213,21 @@ i.iconfont {
 .index-card {
   margin-bottom: 2.5rem;
 }
+.index-card-board {
+  background-color: var(--board-bg-color);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 12px 15px 0 rgba(0,0,0,0.12), 0 9px 20px 0 rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.index-card-board:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 24px 0 rgba(0,0,0,0.18), 0 14px 32px 0 rgba(0,0,0,0.16);
+}
+.index-card-board .index-img img {
+  box-shadow: none;
+}
 .index-img img {
   display: block;
   width: 100%;
