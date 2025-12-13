@@ -19,24 +19,25 @@
   <meta name="author" content="邵岩哲">
   <meta name="keywords" content="">
   
-    <meta name="description" content="这篇文章记录我从零搭起个人博客的完整过程，工具、坑点和我做出的选择。 为什么选 Hexo + Fluid我想要一个写作体验简单、生成快、能自由掌控的方案。Hexo 只要 Node 环境就能跑，Fluid 主题颜值和可定制性都不错，于是确定组合：Hexo + Fluid。 第一步：把环境备好我先装 Node.js 18，然后装 Hexo CLI。 1npm i -g hexo-cli  第二步：把仓">
+    <meta name="description" content="问题描述本来今天要打开 VS Code 维护一下网站，但是发现怎么点击都打不开（包括尝试使用管理员身份运行）。 随后去网上搜索答案，并尝试在终端运行查看详细报错信息： 12PS C:\Users\邵岩哲&gt; code --verbose[1213&#x2F;215916.359:ERROR:base\i18n\icu_util.cc:224] Invalid file descriptor to ICU">
 <meta property="og:type" content="article">
-<meta property="og:title" content="博客网站的建立">
-<meta property="og:url" content="https://shaoyanzhe.site/2025/12/11/%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E7%9A%84%E5%BB%BA%E7%AB%8B/index.html">
+<meta property="og:title" content="VScode更新打不开问题修复">
+<meta property="og:url" content="https://shaoyanzhe.site/2025/12/13/VScode%E6%9B%B4%E6%96%B0%E6%89%93%E4%B8%8D%E5%BC%80%E9%97%AE%E9%A2%98%E4%BF%AE%E5%A4%8D/index.html">
 <meta property="og:site_name" content="今晚...又要失眠？">
-<meta property="og:description" content="这篇文章记录我从零搭起个人博客的完整过程，工具、坑点和我做出的选择。 为什么选 Hexo + Fluid我想要一个写作体验简单、生成快、能自由掌控的方案。Hexo 只要 Node 环境就能跑，Fluid 主题颜值和可定制性都不错，于是确定组合：Hexo + Fluid。 第一步：把环境备好我先装 Node.js 18，然后装 Hexo CLI。 1npm i -g hexo-cli  第二步：把仓">
+<meta property="og:description" content="问题描述本来今天要打开 VS Code 维护一下网站，但是发现怎么点击都打不开（包括尝试使用管理员身份运行）。 随后去网上搜索答案，并尝试在终端运行查看详细报错信息： 12PS C:\Users\邵岩哲&gt; code --verbose[1213&#x2F;215916.359:ERROR:base\i18n\icu_util.cc:224] Invalid file descriptor to ICU">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://shaoyanzhe.site/2025/12/11/%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E7%9A%84%E5%BB%BA%E7%AB%8B/1.jpg">
-<meta property="article:published_time" content="2025-12-11T12:00:00.000Z">
-<meta property="article:modified_time" content="2025-12-13T12:36:06.194Z">
+<meta property="og:image" content="https://shaoyanzhe.site/2025/12/13/VScode%E6%9B%B4%E6%96%B0%E6%89%93%E4%B8%8D%E5%BC%80%E9%97%AE%E9%A2%98%E4%BF%AE%E5%A4%8D/VScode%E5%9B%BE%E6%A0%87.jpg">
+<meta property="article:published_time" content="2025-12-13T14:00:00.000Z">
+<meta property="article:modified_time" content="2025-12-13T14:29:56.277Z">
 <meta property="article:author" content="邵岩哲">
-<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="VS Code">
+<meta property="article:tag" content="故障修复">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://shaoyanzhe.site/2025/12/11/%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E7%9A%84%E5%BB%BA%E7%AB%8B/1.jpg">
+<meta name="twitter:image" content="https://shaoyanzhe.site/2025/12/13/VScode%E6%9B%B4%E6%96%B0%E6%89%93%E4%B8%8D%E5%BC%80%E9%97%AE%E9%A2%98%E4%BF%AE%E5%A4%8D/VScode%E5%9B%BE%E6%A0%87.jpg">
   
   
   
-  <title>博客网站的建立 - 今晚...又要失眠？</title>
+  <title>VScode更新打不开问题修复 - 今晚...又要失眠？</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -226,13 +227,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('../../../../2025/12/11/%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E7%9A%84%E5%BB%BA%E7%AB%8B/1.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('../../../../2025/12/13/VScode%E6%9B%B4%E6%96%B0%E6%89%93%E4%B8%8D%E5%BC%80%E9%97%AE%E9%A2%98%E4%BF%AE%E5%A4%8D/VScode%E5%9B%BE%E6%A0%87.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="博客网站的建立"></span>
+            <span id="subtitle" data-typed-text="VScode更新打不开问题修复"></span>
           
         </div>
 
@@ -243,8 +244,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-12-11 20:00" pubdate>
-          2025年12月11日 晚上
+        <time datetime="2025-12-13 22:00" pubdate>
+          2025年12月13日 晚上
         </time>
       </span>
     
@@ -255,7 +256,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1k 字
+          299 字
         
       </span>
     
@@ -266,7 +267,7 @@
         
         
         
-          9 分钟
+          3 分钟
         
       </span>
     
@@ -325,7 +326,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">博客网站的建立</h1>
+            <h1 id="seo-header">VScode更新打不开问题修复</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
@@ -338,74 +339,22 @@
             
               <div class="markdown-body">
                 
-                <p>这篇文章记录我从零搭起个人博客的完整过程，工具、坑点和我做出的选择。</p>
-<h2 id="为什么选-Hexo-Fluid"><a href="#为什么选-Hexo-Fluid" class="headerlink" title="为什么选 Hexo + Fluid"></a>为什么选 Hexo + Fluid</h2><p>我想要一个写作体验简单、生成快、能自由掌控的方案。Hexo 只要 Node 环境就能跑，Fluid 主题颜值和可定制性都不错，于是确定组合：Hexo + Fluid。</p>
-<h2 id="第一步：把环境备好"><a href="#第一步：把环境备好" class="headerlink" title="第一步：把环境备好"></a>第一步：把环境备好</h2><p>我先装 Node.js 18，然后装 Hexo CLI。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">npm <span class="hljs-selector-tag">i</span> -<span class="hljs-selector-tag">g</span> hexo-cli<br></code></pre></td></tr></table></figure>
+                <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>本来今天要打开 VS Code 维护一下网站，但是发现怎么点击都打不开（包括尝试使用管理员身份运行）。</p>
+<p>随后去网上搜索答案，并尝试在终端运行查看详细报错信息：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">PS</span> C:\Users\邵岩哲&gt; code <span class="hljs-literal">--verbose</span><br>[<span class="hljs-number">1213</span>/<span class="hljs-number">215916.359</span>:<span class="hljs-type">ERROR</span>:<span class="hljs-type">base</span>\<span class="hljs-type">i18n</span>\<span class="hljs-type">icu_util.cc</span>:<span class="hljs-number">224</span>] Invalid file descriptor to ICU <span class="hljs-keyword">data</span> received.<br></code></pre></td></tr></table></figure>
 
-<h2 id="第二步：把仓库“生”出来"><a href="#第二步：把仓库“生”出来" class="headerlink" title="第二步：把仓库“生”出来"></a>第二步：把仓库“生”出来</h2><p>在目标目录初始化并装依赖：</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs applescript">hexo init <span class="hljs-keyword">my</span>-blog<br>cd <span class="hljs-keyword">my</span>-blog<br>npm i<br></code></pre></td></tr></table></figure>
-
-<p>本地跑起来确认：</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">npm <span class="hljs-built_in">run</span> server<br></code></pre></td></tr></table></figure>
-
-<h2 id="第三步：主题换成-Fluid"><a href="#第三步：主题换成-Fluid" class="headerlink" title="第三步：主题换成 Fluid"></a>第三步：主题换成 Fluid</h2><p>安装主题：</p>
-<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> i hexo-theme-fluid<br></code></pre></td></tr></table></figure>
-
-<p>在 <code>./_config.yml</code> 把 <code>theme</code> 改成 <code>fluid</code>。我另外新建了 <code>./_config.fluid.yml</code> 专门放个性化配置，后续更新主题不会丢自定义。</p>
-<h2 id="第四步：把站点配置对齐"><a href="#第四步：把站点配置对齐" class="headerlink" title="第四步：把站点配置对齐"></a>第四步：把站点配置对齐</h2><p>在 <code>./_config.yml</code> 里我设了：</p>
-<ul>
-<li><code>language: zh-CN</code>、<code>timezone: Asia/Shanghai</code></li>
-<li>永久链接：<code>permalink: :year/:month/:day/:title/</code></li>
-<li><code>post_asset_folder: true</code>（文章有自己的资源文件夹）</li>
-</ul>
-<h2 id="第五步：先美化再写"><a href="#第五步：先美化再写" class="headerlink" title="第五步：先美化再写"></a>第五步：先美化再写</h2><p>在 <code>./_config.fluid.yml</code> 我做了这几件事：</p>
-<ul>
-<li>导航标题改成 <code>Blog</code></li>
-<li>开启本地搜索、暗色模式、目录 TOC、字数统计</li>
-<li>首页和关于页加了自己的 Banner 与头像</li>
-</ul>
-<h2 id="第六步：写第一篇文章与关于页"><a href="#第六步：写第一篇文章与关于页" class="headerlink" title="第六步：写第一篇文章与关于页"></a>第六步：写第一篇文章与关于页</h2><p>新文章：</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">hexo <span class="hljs-built_in">new</span> <span class="hljs-built_in">post</span> <span class="hljs-string">&quot;我的第一篇博客&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>配图就放到同名资源文件夹里引用。然后创建关于页：</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs actionscript">hexo <span class="hljs-keyword">new</span> page about<br></code></pre></td></tr></table></figure>
-
-<p>我把 <code>source/about/index.md</code> 的布局设为 <code>about</code>，并写了个人介绍、技能栈、链接。</p>
-<h2 id="第七步：评论系统的选择与踩坑"><a href="#第七步：评论系统的选择与踩坑" class="headerlink" title="第七步：评论系统的选择与踩坑"></a>第七步：评论系统的选择与踩坑</h2><p>我先用 Waline，原因是有社交登录且可自托管。服务端我放在了 Vercel，环境变量这样配：</p>
-<ul>
-<li>基本：<code>LEAN_ID</code>、<code>LEAN_KEY</code>、<code>LEAN_SERVER=https://api.lc-cn-n1-shared.com</code></li>
-<li>数据库：<code>MONGO_DB</code>、<code>MONGO_USER</code>、<code>MONGO_PASSWORD</code>、<code>MONGO_HOST</code>、<code>MONGO_PORT=27017</code>、<code>MONGO_OPT_SSL=true</code></li>
-<li>安全：<code>SECURE_DOMAINS</code> 必须是纯域名逗号分隔（比如 <code>shaoyanzhe.site,waline域名,localhost:4000</code>）</li>
-<li><code>SERVER_URL</code> 写服务端的完整 https 地址</li>
-</ul>
-<p>客户端在 <code>./_config.fluid.yml</code>：</p>
-<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs nix"><span class="hljs-params">post:</span><br>  <span class="hljs-params">comments:</span><br>    <span class="hljs-params">enable:</span> <span class="hljs-literal">true</span><br>    <span class="hljs-params">type:</span> waline<br><br><span class="hljs-params">waline:</span><br>  <span class="hljs-params">serverURL:</span> https:<span class="hljs-operator">//</span>评论域名<br>  <span class="hljs-params">lang:</span> &#x27;zh-CN&#x27;<br>  <span class="hljs-params">emoji:</span> [&#x27;https:<span class="hljs-operator">//</span>cdn.jsdelivr.net<span class="hljs-operator">/</span>gh<span class="hljs-operator">/</span>walinejs<span class="hljs-operator">/</span>emojis<span class="hljs-operator">/</span>weibo&#x27;]<br>  <span class="hljs-params">login:</span> &#x27;force&#x27;<br></code></pre></td></tr></table></figure>
-
-
-<h2 id="第八步：PV-UV-统计"><a href="#第八步：PV-UV-统计" class="headerlink" title="第八步：PV&#x2F;UV 统计"></a>第八步：PV&#x2F;UV 统计</h2><p>LeanCloud 在中国区，<code>server_url</code> 用 <code>https://api.lc-cn-n1-shared.com</code>。我在主题里打开页脚统计与文章浏览量，都走 LeanCloud。</p>
-<h2 id="第九步：部署与自定义域名"><a href="#第九步：部署与自定义域名" class="headerlink" title="第九步：部署与自定义域名"></a>第九步：部署与自定义域名</h2><p>部署我选 GitHub Pages，配置如下：</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">deploy:</span><br><span class="hljs-symbol">  type:</span> git<br><span class="hljs-symbol">  repo:</span> git@github.com:用户名/仓库.git<br><span class="hljs-symbol">  branch:</span> main<br></code></pre></td></tr></table></figure>
-
-<p>执行：</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs routeros">npm <span class="hljs-built_in">run</span> clean<br>npm <span class="hljs-built_in">run</span> build<br>npm <span class="hljs-built_in">run</span> deploy<br></code></pre></td></tr></table></figure>
-
-<p>自定义域名把 <code>source/CNAME</code> 写成 <code>shaoyanzhe.site</code>，DNS 指向 GitHub Pages。</p>
-<h2 id="第十步：为加载做加速"><a href="#第十步：为加载做加速" class="headerlink" title="第十步：为加载做加速"></a>第十步：为加载做加速</h2><p>评论客户端脚本与样式我加了多源回退和懒加载；表情尽量用站内或国内 CDN；如仍受限，就把评论服务端迁到国内云并开 CDN，这一步对体验最明显。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这就是我从零到上线的流程：选 Hexo + Fluid，先把写作体验和主题打磨好，再把评论与统计接起来，最后部署与加速。之后就专注内容本身了。</p>
-<h2 id="后来：我怎么解决-Waline-在国内不可访问的问题"><a href="#后来：我怎么解决-Waline-在国内不可访问的问题" class="headerlink" title="后来：我怎么解决 Waline 在国内不可访问的问题"></a>后来：我怎么解决 Waline 在国内不可访问的问题</h2><p>实际跑上线后，评论区在国内网络加载不出来。我在网上找了很多资料：<br>主要参考：<a target="_blank" rel="noopener" href="https://gem-jay.github.io/posts/3352780266/">https://gem-jay.github.io/posts/3352780266/</a></p>
-<h3 id="1）给-Waline-换成自己的子域名"><a href="#1）给-Waline-换成自己的子域名" class="headerlink" title="1）给 Waline 换成自己的子域名"></a>1）给 Waline 换成自己的子域名</h3><ul>
-<li>在域名控制台创建子域名：<code>comment.shaoyanzhe.site</code></li>
-<li>DNS 记录设置为 CNAME，目标改为 Vercel 提示的专用地址，并保持“仅 DNS”不走代理</li>
-<li>在 Vercel 的 Waline 项目里绑定 <code>comment.shaoyanzhe.site</code>，设为主域并开启“Redirect to primary domain”</li>
-</ul>
-<p>这样就避开了 <code>*.vercel.app</code> 在国内的访问受限，评论接口都走自己的域名。</p>
-<h3 id="2）切换权威-DNS-到-Cloudflare（或在原权威-DNS-添加记录）"><a href="#2）切换权威-DNS-到-Cloudflare（或在原权威-DNS-添加记录）" class="headerlink" title="2）切换权威 DNS 到 Cloudflare（或在原权威 DNS 添加记录）"></a>2）切换权威 DNS 到 Cloudflare（或在原权威 DNS 添加记录）</h3><ul>
-<li>先把域名的 Nameservers 改成 Cloudflare 分配的两条，</li>
-<li>等 NS 生效后，CNAME 才会以 Cloudflare 为权威对外解析；也可以选择继续用 DNSPod，并在 DNSPod 那边新增 <code>comment</code> 的 CNAME（两种方案选其一）</li>
-<li>用 <a target="_blank" rel="noopener" href="https://dnschecker.org/#CNAME/comment.shaoyanzhe.site">https://dnschecker.org/#CNAME/comment.shaoyanzhe.site</a>  DNSCHECKER 验证是否成功<br><img src="dnschecker.jpg" srcset="/img/loading.gif" lazyload alt="DNSCHECKER 验证"></li>
-</ul>
-<p>这套调整保留了 Vercel 的托管，同时通过自定义子域名与权威 DNS 切换把访问路径稳定在国内网络里；客户端的多源回退与本地资源，让评论区的加载速度和可用性都更稳。</p>
+<p>报错信息提示 <code>Invalid file descriptor to ICU data received</code>，这意味着安装目录下缺少 ICU 数据文件。</p>
+<h2 id="排查过程"><a href="#排查过程" class="headerlink" title="排查过程"></a>排查过程</h2><p>检查 VS Code 的安装文件夹，发现里面竟然有一个名为 <code>—</code>（短横线）的奇怪文件夹。</p>
+<p>打开这个 <code>—</code> 文件夹，发现 <code>icudtl.dat</code> 等文件竟然都在里面。正常来说，这些 ICU 文件应该和 <code>Code.exe</code> 位于同一目录下。</p>
+<p>推测应该是更新时的安装程序错误地将这些文件放到了这个名为 <code>—</code> 的子文件夹中。</p>
+<p>我的 VS Code 版本显示为：1.1.0.7</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ol>
+<li>进入那个名为 <code>—</code> 的文件夹。</li>
+<li>将其中的<strong>所有文件</strong>剪切（注意是剪切，不是复制）。</li>
+<li>粘贴到上级目录（即与 <code>Code.exe</code> 同级的目录）。</li>
+<li>删除变空的 <code>—</code> 文件夹。</li>
+</ol>
+<p>完成上述步骤后，VS Code 即可正常启动。</p>
 
                 
               </div>
@@ -439,7 +388,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="../../../../tags/Hexo/" class="print-no-link">#Hexo</a>
+        <a href="../../../../tags/VS-Code/" class="print-no-link">#VS Code</a>
+      
+        <a href="../../../../tags/%E6%95%85%E9%9A%9C%E4%BF%AE%E5%A4%8D/" class="print-no-link">#故障修复</a>
       
     </div>
   
@@ -451,8 +402,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>博客网站的建立</div>
-      <div>https://shaoyanzhe.site/2025/12/11/博客网站的建立/</div>
+      <div>VScode更新打不开问题修复</div>
+      <div>https://shaoyanzhe.site/2025/12/13/VScode更新打不开问题修复/</div>
     </div>
     <div class="license-meta">
       
@@ -464,7 +415,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年12月11日</div>
+          <div>2025年12月13日</div>
         </div>
       
       
@@ -501,18 +452,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="../../13/VScode%E6%9B%B4%E6%96%B0%E6%89%93%E4%B8%8D%E5%BC%80%E9%97%AE%E9%A2%98%E4%BF%AE%E5%A4%8D/" title="VScode更新打不开问题修复">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">VScode更新打不开问题修复</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="../../08/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" title="我的第一篇博客">
-                        <span class="hidden-mobile">我的第一篇博客</span>
+                      <a href="../../11/%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E7%9A%84%E5%BB%BA%E7%AB%8B/" title="博客网站的建立">
+                        <span class="hidden-mobile">博客网站的建立</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
