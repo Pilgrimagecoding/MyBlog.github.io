@@ -458,23 +458,17 @@
   <div id="waline"></div>
   <script type="text/javascript">
     (function() {
+      var baseOptions = {"serverURL":"https://comment.shaoyanzhe.site/api","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10};
+      if (baseOptions.serverURL) {
+        var pre = document.createElement('link');
+        pre.rel = 'preconnect';
+        pre.href = baseOptions.serverURL;
+        document.head.appendChild(pre);
+      }
+
       Fluid.utils.loadComments('#waline', function() {
         try {
-          var baseOptions = {"serverURL":"https://comment.shaoyanzhe.site/api","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10};
-          if (baseOptions.serverURL) {
-            var pre = document.createElement('link');
-            pre.rel = 'preconnect';
-            pre.href = baseOptions.serverURL;
-            document.head.appendChild(pre);
-          }
-
-          var cssCdnList = [
-            'https://registry.npmmirror.com/@waline/client/2.15.8/files/dist/waline.css',
-            'https://npm.elemecdn.com/@waline/client@v2/dist/waline.css',
-            'https://cdn.jsdelivr.net/npm/@waline/client@v2/dist/waline.css',
-            'https://unpkg.com/@waline/client@v2/dist/waline.css'
-          ];
-          Fluid.utils.createCssLink(cssCdnList[0]);
+          Fluid.utils.createCssLink('https://unpkg.com/@waline/client@v3/dist/waline.css');
 
           var computePath = function() {
             try {
@@ -484,45 +478,22 @@
             }
           };
 
-          var loadScriptWithFallback = function(urls, onload) {
-            var idx = 0;
-            var tryLoad = function() {
-              var s = document.createElement('script');
-              s.src = urls[idx];
-              s.defer = true;
-              s.onload = onload;
-              s.onerror = function() {
-                if (++idx < urls.length) {
-                  tryLoad();
-                } else {
-                  console.error('Waline script load failed');
-                }
-              };
-              document.head.appendChild(s);
-            };
-            tryLoad();
-          };
-
-          var jsCdnList = [
-            'https://registry.npmmirror.com/@waline/client/2.15.8/files/dist/waline.js',
-            'https://npm.elemecdn.com/@waline/client@v2/dist/waline.js',
-            'https://cdn.jsdelivr.net/npm/@waline/client@v2/dist/waline.js',
-            'https://unpkg.com/@waline/client@v2/dist/waline.js'
-          ];
-
-          loadScriptWithFallback(jsCdnList, function() {
+          import('https://unpkg.com/@waline/client@v3/dist/waline.js').then(function(mod) {
             try {
-              var options = Object.assign(baseOptions, { el: '#waline', path: computePath() });
-              if (typeof Waline !== 'undefined' && Waline && typeof Waline.init === 'function') {
-                Waline.init(options);
-              } else {
-                console.error('Waline is not available or init is missing');
+              var init = mod.init || (mod.default && mod.default.init) || mod.default || (mod.Waline && mod.Waline.init);
+              if (typeof init !== 'function') {
+                console.error('Waline init function not found');
+                return;
               }
-              // hide unused oauth icons in client widget
-              ['.oauth.twitter', '.oauth.facebook'].forEach(function(sel){
+
+              var options = Object.assign({}, baseOptions, { el: '#waline', path: computePath() });
+              var instance = init(options);
+
+              ['.oauth.twitter', '.oauth.facebook'].forEach(function(sel) {
                 var el = document.querySelector('#waline ' + sel);
                 if (el) el.style.display = 'none';
               });
+
               Fluid.utils.waitElementVisible('#waline .vcontent', function() {
                 var imgSelector = '#waline .vcontent img:not(.vemoji)';
                 Fluid.plugins.imageCaption(imgSelector);
@@ -531,9 +502,11 @@
             } catch (err) {
               console.error('Waline init error: ', err);
             }
+          }).catch(function(err) {
+            console.error('Waline load error: ', err);
           });
         } catch (err) {
-          console.error('Waline load error: ', err);
+          console.error('Waline setup error: ', err);
         }
       });
     })();
