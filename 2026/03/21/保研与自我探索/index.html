@@ -477,10 +477,10 @@
           }
 
           var cssCdnList = [
-            'https://unpkg.com/@waline/client@v1/dist/waline.css',
-            'https://npm.elemecdn.com/@waline/client@v1/dist/waline.css',
-            'https://cdn.jsdelivr.net/npm/@waline/client@v1/dist/waline.css',
-            'https://unpkg.com/@waline/client@v1/dist/waline.css'
+            'https://registry.npmmirror.com/@waline/client/2.15.8/files/dist/waline.css',
+            'https://npm.elemecdn.com/@waline/client@v2/dist/waline.css',
+            'https://cdn.jsdelivr.net/npm/@waline/client@v2/dist/waline.css',
+            'https://unpkg.com/@waline/client@v2/dist/waline.css'
           ];
           Fluid.utils.createCssLink(cssCdnList[0]);
 
@@ -512,28 +512,20 @@
           };
 
           var jsCdnList = [
-            'https://unpkg.com/@waline/client@v1/dist/waline.js',
-            'https://npm.elemecdn.com/@waline/client@v1/dist/waline.js',
-            'https://cdn.jsdelivr.net/npm/@waline/client@v1/dist/waline.js',
-            'https://unpkg.com/@waline/client@v1/dist/waline.js'
+            'https://registry.npmmirror.com/@waline/client/2.15.8/files/dist/waline.js',
+            'https://npm.elemecdn.com/@waline/client@v2/dist/waline.js',
+            'https://cdn.jsdelivr.net/npm/@waline/client@v2/dist/waline.js',
+            'https://unpkg.com/@waline/client@v2/dist/waline.js'
           ];
-
-          var initWaline = function(options) {
-            if (typeof Waline !== 'undefined' && Waline) {
-              if (typeof Waline.init === 'function') {
-                return Waline.init(options);
-              }
-              if (typeof Waline === 'function') {
-                return Waline(options);
-              }
-            }
-            throw new Error('Waline is not loaded correctly');
-          };
 
           loadScriptWithFallback(jsCdnList, function() {
             try {
               var options = Object.assign(baseOptions, { el: '#waline', path: computePath() });
-              initWaline(options);
+              if (typeof Waline !== 'undefined' && Waline && typeof Waline.init === 'function') {
+                Waline.init(options);
+              } else {
+                console.error('Waline is not available or init is missing');
+              }
               // hide unused oauth icons in client widget
               ['.oauth.twitter', '.oauth.facebook'].forEach(function(sel){
                 var el = document.querySelector('#waline ' + sel);
