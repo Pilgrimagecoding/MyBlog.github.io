@@ -1,0 +1,870 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="../../../../img/favicon.png">
+  <link rel="icon" href="../../../../img/favicon.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="邵岩哲">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="龙与少年游说一个场景，你大概率经历过。 凌晨一点，宿舍其他人都睡了，你戴着耳机对着屏幕，终于把一个困了你两天的 bug 修好了。那一刻你往椅背上一靠，摘下眼镜揉了揉眼睛，心里有一种很安静的满足感——不是狂喜，就是一种“我搞定了”的笃定。 然后你保存，提交，关掉电脑。躺在床上的时候忽然想起来，其实这个 bug 的原因很简单，你只是在一个地方少写了一行边界判断。你花了两天时间，只是因为你当时不知道这件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="龙与少年游（随笔转载）">
+<meta property="og:url" content="https://shaoyanzhe.site/2025/12/13/%E9%9A%8F%E7%AC%941/index.html">
+<meta property="og:site_name" content="今晚...又要失眠？">
+<meta property="og:description" content="龙与少年游说一个场景，你大概率经历过。 凌晨一点，宿舍其他人都睡了，你戴着耳机对着屏幕，终于把一个困了你两天的 bug 修好了。那一刻你往椅背上一靠，摘下眼镜揉了揉眼睛，心里有一种很安静的满足感——不是狂喜，就是一种“我搞定了”的笃定。 然后你保存，提交，关掉电脑。躺在床上的时候忽然想起来，其实这个 bug 的原因很简单，你只是在一个地方少写了一行边界判断。你花了两天时间，只是因为你当时不知道这件">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://shaoyanzhe.site/img/essay/essay1.png">
+<meta property="article:published_time" content="2025-12-13T12:00:00.000Z">
+<meta property="article:modified_time" content="2026-04-12T06:19:18.523Z">
+<meta property="article:author" content="邵岩哲">
+<meta property="article:tag" content="思考整理">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://shaoyanzhe.site/img/essay/essay1.png">
+  
+  
+  
+  <title>龙与少年游（随笔转载） - 今晚...又要失眠？</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="../../../../css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="../../../../css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="../../../../css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="../../../../css/waves.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"shaoyanzhe.site","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"b2583709b24c2311aac5082d4ee85e74","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"mxne2dIPjTIbjyL9nRRC6jby-gzGzoHsz","app_key":"erjiQLerre5CcjsnOnCBzipq","server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="../../../../js/utils.js" ></script>
+  <script  src="../../../../js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?b2583709b24c2311aac5082d4ee85e74";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body class="" style="overflow-x: hidden">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="../../../../index.html">
+      <strong>今晚...又要失眠？</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../index.html" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('../../../../img/essay/essay1.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="龙与少年游（随笔转载）"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-12-13 20:00" pubdate>
+          2025年12月13日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          45 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+  <div class="banner-wave">
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+      </defs>
+      <g class="parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" />
+        <use xlink:href="#gentle-wave" x="48" y="3" />
+        <use xlink:href="#gentle-wave" x="48" y="5" />
+        <use xlink:href="#gentle-wave" x="48" y="7" />
+      </g>
+    </svg>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">龙与少年游（随笔转载）</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="龙与少年游"><a href="#龙与少年游" class="headerlink" title="龙与少年游"></a>龙与少年游</h2><p>说一个场景，你大概率经历过。</p>
+<p>凌晨一点，宿舍其他人都睡了，你戴着耳机对着屏幕，终于把一个困了你两天的 bug 修好了。那一刻你往椅背上一靠，摘下眼镜揉了揉眼睛，心里有一种很安静的满足感——不是狂喜，就是一种“我搞定了”的笃定。</p>
+<p>然后你保存，提交，关掉电脑。躺在床上的时候忽然想起来，其实这个 bug 的原因很简单，你只是在一个地方少写了一行边界判断。你花了两天时间，只是因为你当时不知道这件事。</p>
+<p>编程能力的提升，大概就是不断缩短这种“不知道”到“知道”之间的距离。</p>
+<p>但难的地方在于——你永远不知道自己还有多少“不知道”。你以为自己站在五楼，推开一扇窗，发现这栋楼有五十层。你以为自己快到山顶了，转过一个弯，看见前面还有连绵的山脊，消失在云雾里。</p>
+<p>这种感觉，既让人沮丧，又让人着迷。</p>
+<p><img src="/img/essay/%E6%B2%AE%E4%B8%A7.png" srcset="/img/loading.gif" lazyload alt="沮丧表情"></p>
+<p>我讲讲自己这两年多摸索出来的一些东西。不一定对，但至少是真实的。</p>
+<h2 id="先回答一个前置问题：为什么很多人“一直在学”但进步很慢"><a href="#先回答一个前置问题：为什么很多人“一直在学”但进步很慢" class="headerlink" title="先回答一个前置问题：为什么很多人“一直在学”但进步很慢"></a>先回答一个前置问题：为什么很多人“一直在学”但进步很慢</h2><p>我观察过身边不少同学，包括我自己一段时间的状态，发现了一个共同的陷阱——用“输入”代替“练习”。</p>
+<p>看教程、看视频、看书、看别人的代码——这些都是输入。输入很重要，但输入本身不产生能力。你可以看一百个游泳教学视频，下了水该呛还是呛。</p>
+<p>我大二的时候疯狂看技术博客，收藏夹里存了上千篇文章，Zotero 里的论文按文件夹分了十几类。每天都觉得自己“学了很多”。但有一次参加一个编程比赛，题目不难，我坐在那里半个小时写不出来，手指放在键盘上就是不知道从哪里开始。</p>
+<p>那天晚上回宿舍的路上，天很冷，我把手插在口袋里走了很久。不是难过，是一种更复杂的东西——我意识到自己一直在用“学习的姿态”逃避“练习的痛苦”。</p>
+<p>看教程是舒服的，因为你一直在“懂”。写代码是痛苦的，因为你一直在“不会”。人本能地会逃避那种“我不会”的挫败感，所以你不自觉地把时间花在了让自己感觉良好但实际上没什么用的事情上。</p>
+<p>后来我逼自己定了一个规则：**每看一个小时的技术内容，必须写至少半个小时的代码来练。**不是跟着教程抄，是关掉教程，凭自己的理解从零写。写不出来的地方，那才是你真正需要学的地方。</p>
+<p>这个习惯可能是我这两年做过的最正确的决定之一。</p>
+<h2 id="第一件事：找到你的“刻意练习”场域"><a href="#第一件事：找到你的“刻意练习”场域" class="headerlink" title="第一件事：找到你的“刻意练习”场域"></a>第一件事：找到你的“刻意练习”场域</h2><p>“刻意练习”这个词被说烂了，但大部分人理解的刻意练习是错的。</p>
+<p>刻意练习不是“重复做你已经会的事情”。你刷了三百道 LeetCode 简单题，编程能力不会有本质提升。因为你只是在重复已经掌握的技能，大脑不需要建立新的神经通路。</p>
+<p>真正的刻意练习是持续做那些“刚好超出你当前能力边缘”的事情。你够一够能摸到，但必须踮脚——这个区间才是成长发生的地方。</p>
+<p>具体怎么找这个区间？几个对我有效的方法——</p>
+<h3 id="1-写项目，写真实的项目"><a href="#1-写项目，写真实的项目" class="headerlink" title="1. 写项目，写真实的项目"></a>1. 写项目，写真实的项目</h3><p>不是那种 Todo List、计算器、天气 App 这种教程项目。是你自己真正想用、真正有需求的东西。</p>
+<p>我大四的时候写过一个实验管理工具。因为跑深度学习实验的时候，超参、指标、日志散落在各种地方，每次对比实验要翻半天文件夹。我烦了，就自己写了一个——能自动记录每次实验的配置、指标曲线、模型 checkpoint，还能在命令行里查询和对比。</p>
+<p>这个项目没有任何教程教你怎么做。我需要自己想数据怎么存、接口怎么设计、命令行参数怎么解析、怎么生成对比图表。每一步都是现学现用——学 SQLite、学 Click 库、学 matplotlib 的非交互模式。</p>
+<p>整个过程很慢。写了大概三个星期，中间推翻重构了两次。但写完之后，我对 Python 的项目组织、数据库操作、CLI 设计的理解，比之前看十篇教程都深。</p>
+<p>因为你在解决一个真实的、边界模糊的、没有标准答案的问题。这跟做作业是完全不同的心智活动。</p>
+<h3 id="2-读一个开源项目的源码，然后给它贡献代码"><a href="#2-读一个开源项目的源码，然后给它贡献代码" class="headerlink" title="2. 读一个开源项目的源码，然后给它贡献代码"></a>2. 读一个开源项目的源码，然后给它贡献代码</h3><p>这是另一个非常好的练习场。</p>
+<p>不需要一上来就给 Linux 内核提 PR。找一个你正在用的、中等规模的项目——star 数在几百到几千之间的那种，通常维护者比较友好，代码库也不会大到读不完。</p>
+<p>先从 issue 列表里找一个标记了 good first issue 的任务。通常是修一个小 bug 或者加一个小功能。为了完成这个任务，你需要：读懂项目的代码结构、理解它的设计约定、跑通测试流程、写出符合项目风格的代码、提交 PR 接受 review。</p>
+<p>这个过程里你学到的东西——怎么读大型代码库、怎么遵循已有的架构设计、怎么写出“符合上下文”的代码——这些在任何课程里都学不到。</p>
+<p>我去年给一个 PyTorch 生态的工具库提过一个 PR，改了一个数据加载的性能问题。改动本身不大，大概四五十行代码。但为了搞清楚应该怎么改，我把相关模块的源码翻来覆去读了好几遍，光理解它的多进程数据管道就花了两个晚上。</p>
+<p>PR 提交之后，maintainer 给了好几轮 review 意见，有些地方他建议的写法我完全没想过。比如一个地方我用了 try-except 来处理异常，他说这里应该用 contextmanager 来确保资源释放——然后贴了一段代码示例，我看完之后愣了几秒，心想这才是写代码啊。</p>
+<p>那种被更强的人 review 的体验，是独自学习永远给不了你的。</p>
+<blockquote>
+<p>（图片）</p>
+</blockquote>
+<h2 id="第二件事：建立“反思—记录”的闭环"><a href="#第二件事：建立“反思—记录”的闭环" class="headerlink" title="第二件事：建立“反思—记录”的闭环"></a>第二件事：建立“反思—记录”的闭环</h2><p>练习产生经验，但经验不会自动变成能力。中间需要一个环节——反思。</p>
+<p>我从大四下学期开始养成一个习惯：每周五花半个小时写一段“编程周记”。不用写很多，就回答三个问题：</p>
+<ul>
+<li>这周写代码时遇到的最难的问题是什么？我怎么解决的？</li>
+<li>有没有什么地方我觉得自己写得不够好？如果重来我会怎么改？</li>
+<li>有没有看到别人写的代码让我觉得“原来可以这样”的？</li>
+</ul>
+<p>这个笔记本现在已经积累了一百多条了。偶尔翻回去看，能很清楚地看到自己的成长轨迹——半年前觉得很难的东西，现在已经变成了直觉；半年前犯过的错误，现在不用想就能绕过去。</p>
+<p>更重要的是，它帮我识别出了自己的“能力盲区”。</p>
+<p>比如翻了几周的记录之后，我发现一个模式：我遇到的大部分难题都跟并发有关——竞态条件、死锁、多进程数据共享。这说明并发编程是我的薄弱环节。于是我专门花了两周时间系统学了 Python 的 multiprocessing 和 threading，读了 concurrent.futures 的源码，写了几个小的并发程序来练手。</p>
+<p>如果没有那个笔记本，我可能永远意识不到这个盲区。因为每次遇到并发问题我都是“查一下 StackOverflow 然后糊弄过去”，没有哪一次痛到让我专门去学。但当你看到同一类问题反复出现的时候，你就知道该系统性地补课了。</p>
+<p>成长有时候不是向前跑，是停下来看看自己的脚印。</p>
+<h2 id="第三件事：读代码，像读文学一样读"><a href="#第三件事：读代码，像读文学一样读" class="headerlink" title="第三件事：读代码，像读文学一样读"></a>第三件事：读代码，像读文学一样读</h2><p>这个说法可能有点矫情，但我是认真的。</p>
+<p>好的代码是有美感的。就像好的文章一样，它有节奏——复杂的逻辑被拆成几个步骤，每个步骤刚好是你能一口气理解的长度。它有命名的美感——变量名准确到你不需要注释就知道它是什么。它有结构的美感——模块之间的边界清晰，职责分明，你能感受到写代码的人在动手之前想清楚了整体的骨架。</p>
+<p>我推荐几个我读过觉得写得漂亮的项目，值得反复看：</p>
+<ul>
+<li>requests（Python 的 HTTP 库）：Kenneth Reitz 写的代码有一种罕见的优雅。API 设计得像自然语言一样直觉，内部实现也极其干净。它是“什么叫好的 API 设计”的教科书。</li>
+<li>redis（C 语言写的）：antirez 的代码风格简洁到极致。每个函数都很短，命名极其清晰，注释写在最有价值的地方。如果你想知道“C 语言也能写得这么好读”，去看 redis。</li>
+<li>flask（Python Web 框架）：早期版本的 flask 代码量很小，但架构设计极其精巧。特别是它的上下文管理和蓝图系统，用很少的代码实现了很强的扩展性。</li>
+<li>pytorch 的 autograd 模块：计算图的自动微分实现。代码不长，但信息密度极高。读完你会对“什么是计算图”“反向传播到底怎么实现的”有完全不同层次的理解。</li>
+</ul>
+<p>读源码的时候我有个习惯——不只是读“它写了什么”，还要想“它为什么这么写”以及“它选择不做什么”。</p>
+<p>那些没有被写出来的代码，有时候比写出来的更有意思。为什么这个函数不处理这种异常情况？为什么这里不做缓存？为什么这个类不提供这个接口？每一个“没有”的背后，都是作者做的一个设计决策。理解这些决策，比理解代码本身更有价值。</p>
+<p>这有点像读小说。江南写《龙族》，很多最动人的东西不在他写了什么，在他没写什么。路明非在某些时刻的沉默，绘梨衣某个没说出口的句子——留白才是最重的笔墨。</p>
+<p>好的代码也是这样。克制本身就是一种能力。</p>
+<h2 id="第四件事：跟人交流，尤其是跟比你强的人"><a href="#第四件事：跟人交流，尤其是跟比你强的人" class="headerlink" title="第四件事：跟人交流，尤其是跟比你强的人"></a>第四件事：跟人交流，尤其是跟比你强的人</h2><p>我知道很多程序员——包括我自己——天然倾向于独处。一个人对着屏幕，安静地写代码，这是舒适区。</p>
+<p>但编程能力的提升，有很多时候是社交行为。</p>
+<p>Code review 是最高效的学习方式之一。不是你 review 别人，是让别人 review 你。当一个更有经验的人看着你的代码说“这里为什么不用生成器？”“这个异常处理的粒度太粗了”“这个变量的生命周期太长了”——每一条这样的意见都是一次浓缩的经验传递。</p>
+<p>如果你在实验室或者公司没有 code review 的文化，去开源社区找。提 PR 就是一种 code review。维护者给你的 review 意见，可能是你在任何课程里都买不到的个性化教学。</p>
+<p>结对编程也是。我跟师兄有过几次结对编程的经历——两个人坐在一台电脑前，一个写一个看，随时讨论。效率看起来低了（两个人干一个人的活），但学习效率极高。你能看到一个更有经验的人是“怎么思考的”——他遇到问题时第一反应是什么，他怎么在几个方案之间做取舍，他的手指在键盘上的流动方式。</p>
+<p>这些东西不可能从书上学到。它们只存在于真实的、活生生的编程过程中。</p>
+<p>甚至连闲聊都有用。上周跟一个做后端的朋友吃饭，他随口提了一句他们项目里用了“事件溯源”模式来做数据一致性。我当时不知道这是什么，回去查了一下，发现是一个很有意思的架构思想——不存储当前状态，只存储所有状态变更的事件序列，当前状态通过重放事件来重建。</p>
+<p>一顿饭，一个关键词，引出了我两天的学习。这种事情发生过很多次。</p>
+<p>人是最好的搜索引擎。算法再好，也不知道你此刻卡在哪里。但一个懂你上下文的人，有时候一句话就能帮你捅破那层窗户纸。（当然煮啵不是哈哈哈哈）</p>
+<h2 id="第五件事：学会“慢下来”"><a href="#第五件事：学会“慢下来”" class="headerlink" title="第五件事：学会“慢下来”"></a>第五件事：学会“慢下来”</h2><p>这个可能是最反直觉的一条。</p>
+<p>我们这个行业有一种隐性的焦虑——技术迭代太快了。上个月还在学 LangChain，这个月就出了 LlamaIndex；你刚搞懂 LoRA，QLoRA 就来了；论文看不完，框架学不完，新概念记不完。</p>
+<p>这种焦虑会驱动你做一件很糟糕的事情：什么都学一点，什么都不学深。</p>
+<p>你的收藏夹越来越长，你的技能树越来越宽，但每一根枝条都只有几厘米。遇到真正需要用的时候，没有任何一根能撑住你。</p>
+<p>我有一段时间就是这种状态。每天刷 Twitter 看到新东西就焦虑，觉得自己落后了，赶紧去学。学了一天发现又有更新的东西出来了，再去追。像是在追一列不断加速的火车。</p>
+<p>后来是我导师的一句话把我拉回来的。他说：</p>
+<p>“你不需要跟上所有东西。你只需要在一个方向上扎得足够深，深到别人遇到这个方向的问题时会来找你。”</p>
+<p>这句话我想了很久。</p>
+<p>他说得对。你看那些真正厉害的程序员——不是什么都会的人，而是在某个领域深到了一定程度的人。Linus Torvalds 不需要会写 JavaScript，Guido van Rossum 不需要懂 CUDA 编程。但在他们各自的领域里，他们的理解深度是普通人望尘莫及的。</p>
+<p>广度让你有话题聊，深度让你有价值。</p>
+<p>所以我现在的策略是：用 20% 的时间保持广度（每周扫一扫领域内的新东西，知道它们存在就行），用 80% 的时间深耕一两个方向。</p>
+<p>具体到操作层面——</p>
+<ul>
+<li>选一门语言，用到真正深入。不是“会用”的程度，是“理解它的设计哲学和底层机制”的程度。你用 Python，就去搞清楚 GIL 是怎么回事、描述符协议是什么、import 系统的查找顺序、asyncio 的事件循环怎么跑的。这些东西日常开发不一定用到，但当你需要它们的时候——debug 一个诡异的性能问题、设计一个高并发的服务——它们就是你的底牌。</li>
+<li>选一个领域，持续跟进。不管是分布式系统、图形学、编译器、还是我做的 AI 方向。订阅这个领域的核心会议和期刊，关注几个核心的开源项目，跟几个这个方向的活跃开发者或研究者。半年之后，你会发现自己对这个领域的“直觉”变强了——看到一篇新论文，你能很快判断它是真有料还是新瓶装旧酒；遇到一个问题，你脑子里会自动浮现几个可能的方案。</li>
+</ul>
+<p>这种直觉是最值钱的东西，但它只能用时间换。没有捷径。</p>
+<h2 id="第六件事：接受“高原期”"><a href="#第六件事：接受“高原期”" class="headerlink" title="第六件事：接受“高原期”"></a>第六件事：接受“高原期”</h2><p>最后说一个很少有人提但每个人都会遇到的事。</p>
+<p>编程能力的提升不是线性的。它更像爬山——一段时间你进步很快，觉得自己每天都在变强；然后突然进入一个平台期，怎么练都觉得没长进，写的代码还是那样，解决问题的速度也没变快。</p>
+<p>这个时候最容易放弃，或者焦虑到去追新的东西，觉得“是不是我学的方向不对”。</p>
+<p>我经历过两次比较明显的高原期。</p>
+<p>第一次是大三。我已经能熟练地写各种课设和小项目了，LeetCode 中等题基本都能做出来，但就是觉得自己“就这样了”。代码能跑，也说不上哪里不好，但总觉得缺了点什么——像是一个人会写字但不会书法，笔画都对，就是没有力道。</p>
+<p>那段时间很闷。每天都在写代码，但感觉像在原地踏步。</p>
+<p>后来是一件偶然的事情打破了这个僵局。我去旁听了一门研究生的系统设计课，课上老师让大家分析 Redis 的架构。我第一次从“系统”的角度看一个软件——不是看某个函数怎么写，而是看整体的数据流、模块划分、容错机制、性能与简洁性之间的取舍。</p>
+<p>那门课像是给我换了一副眼镜。我突然意识到，我之前一直在“代码”的层面努力，但真正的瓶颈在“设计”的层面。我的单个函数写得不差，但我不知道怎么把十几个模块组织成一个协调的整体。</p>
+<p>高原期不是你不够努力。是你在当前的认知框架里已经触顶了，你需要一个新的视角来打开上面的空间。</p>
+<p>第二次高原期是去年。研一上学期，实验做得不太顺利，论文也写不出来，代码上也没什么突破。有一段时间我每天到实验室就打开 VSCode，对着屏幕发呆，不知道该写什么。</p>
+<p>那段时间我做了一件后来证明很有用的事——我停下了“学新东西”，转而去重构自己以前的项目。</p>
+<p>把从前写的实验代码翻出来，用我现在的标准重新审视。该拆的函数拆开，该抽的抽象提出来，该补的测试补上。这个过程里没有任何“新知识”的摄入，但我对已有知识的理解变深了很多。</p>
+<p>有时候，进步不是往前走，是回头把走过的路夯实。</p>
+<p>上个月底下了一场小雨，我从实验室出来，没打伞，沿着校园里那条种满银杏的路慢慢走。树叶还没全黄，绿色和金色交杂在一起，雨水顺着叶脉滑下来，落在地上碎成一朵很小的花。</p>
+<p>不知道为什么，那一刻我忽然想起了刚学编程时候的自己。那个对着黑色终端窗口，看到自己的第一个 Hello World 被打印出来就兴奋得不行的人。那时候什么都不懂，什么都不会，但什么都想试。</p>
+<p>现在我懂得多了一些。能写更复杂的代码，能设计更合理的系统，能读懂那些曾经觉得天书一样的论文和源码。但有些东西好像也在变多的过程中悄悄变少了——我不太敢随便写代码了，因为我知道了什么是“好”，就很难忍受自己写出“不好”的东西。</p>
+<p>这大概就是成长最吊诡的地方。你获得了判断力，同时也获得了犹豫。你的天花板被抬高了，但你脚下的地面好像也在变得更硬。</p>
+<p>不过我最近慢慢想通了一件事。</p>
+<p>编程能力的提升不像爬一座山，有明确的顶峰可以到达。它更像是在一片没有边界的海上航行。你永远到不了尽头，但每一天，你的船都可以比昨天稍微快一点，你辨认风向的能力都可以比昨天稍微强一点，你在夜里凭星辰定位的直觉都可以比昨天稍微准一点。</p>
+<p>而那些你穿过的每一片水域——哪怕当时觉得迷茫、觉得原地打转——事后回头看，都是航线的一部分。</p>
+<p>有一天你会在某个意想不到的时刻发现：你已经走了很远了。不是因为你做了什么惊天动地的事情，只是因为你每天都在写，每天都在想，每天都没有停。</p>
+<p>所以如果你现在觉得自己进步很慢，觉得看不到终点，觉得身边的人好像都比你强——没关系。</p>
+<p>把今天的代码写完。明天再写明天的。</p>
+<p>这条路上最不需要的就是着急。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="../../../../categories/%E9%9A%8F%E7%AC%94/" class="category-chain-item">随笔</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="../../../../tags/%E6%80%9D%E8%80%83%E6%95%B4%E7%90%86/" class="print-no-link">#思考整理</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>龙与少年游（随笔转载）</div>
+      <div>https://shaoyanzhe.site/2025/12/13/随笔1/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>邵岩哲</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年12月13日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="../VScode%E6%9B%B4%E6%96%B0%E6%89%93%E4%B8%8D%E5%BC%80%E9%97%AE%E9%A2%98%E4%BF%AE%E5%A4%8D/" title="VScode更新打不开问题修复">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">VScode更新打不开问题修复</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="../../11/%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E7%9A%84%E5%BB%BA%E7%AB%8B/" title="博客网站的建立">
+                        <span class="hidden-mobile">博客网站的建立</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="waline"></div>
+  <script type="text/javascript">
+    (function() {
+      var baseOptions = {"serverURL":"https://comment.shaoyanzhe.site","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10};
+      if (baseOptions.serverURL) {
+        var pre = document.createElement('link');
+        pre.rel = 'preconnect';
+        pre.href = baseOptions.serverURL;
+        document.head.appendChild(pre);
+      }
+
+      Fluid.utils.loadComments('#waline', function() {
+        try {
+          Fluid.utils.createCssLink('https://unpkg.com/@waline/client@v3/dist/waline.css');
+
+          var computePath = function() {
+            try {
+              return (function(){ return eval("window.location.pathname"); })();
+            } catch (e) {
+              return window.location.pathname;
+            }
+          };
+
+          import('https://unpkg.com/@waline/client@v3/dist/waline.js').then(function(mod) {
+            try {
+              var init = mod.init || (mod.default && mod.default.init) || mod.default || (mod.Waline && mod.Waline.init);
+              if (typeof init !== 'function') {
+                console.error('Waline init function not found');
+                return;
+              }
+
+              var options = Object.assign({}, baseOptions, { el: '#waline', path: computePath() });
+              var instance = init(options);
+
+              ['.oauth.twitter', '.oauth.facebook'].forEach(function(sel) {
+                var el = document.querySelector('#waline ' + sel);
+                if (el) el.style.display = 'none';
+              });
+
+              Fluid.utils.waitElementVisible('#waline .vcontent', function() {
+                var imgSelector = '#waline .vcontent img:not(.vemoji)';
+                Fluid.plugins.imageCaption(imgSelector);
+                Fluid.plugins.fancyBox(imgSelector);
+              });
+            } catch (err) {
+              console.error('Waline init error: ', err);
+            }
+          }).catch(function(err) {
+            console.error('Waline load error: ', err);
+          });
+        } catch (err) {
+          console.error('Waline setup error: ', err);
+        }
+      });
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="../../../../js/events.js" ></script>
+<script  src="../../../../js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="../../../../js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="../../../../js/leancloud.js" ></script>
+
+  <script  src="../../../../js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="../../../../js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
